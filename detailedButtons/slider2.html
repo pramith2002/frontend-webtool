@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="detailedButton.css">
+</head>
+
+<body>
+    <header class="header">
+        <div><img src="../images/logo.webp" alt=""></div>
+        <div class="typeselect">
+        </div>
+    </header>
+    <div class="bodySection">
+        <a href="../index.html">
+            <img src="../images/backbutton.webp" alt="" class="backButton">
+        </a>
+        <div class="originalButtonSection">
+            <div id="carousel">
+                <div class="slide">
+                    <img src="../images/spiderman (2).webp">
+                </div>
+                <div class="slide">
+                    <img src="../images/spiderman (1).webp">
+                </div>
+                <div class="slide">
+                    <img src="../images/spiderman (3).webp">
+                </div>
+            </div>
+            <div><center><p style="margin: 0;">SWIPE</p></center></div>
+        </div>
+        <div class="buttonCodeContainer">
+            <div>
+                <h2>HTML</h2>
+            </div>
+            <div class="buttonCodeSection">
+                <img src="../images/copy.webp" alt="" class="copyButtons" id="copyButton1">
+                <pre id="textToCopy1">
+&lt;div id="carousel"&gt;
+    &lt;div class="slide"&gt;
+        &lt;img src="images/spiderman (2).webp"&gt;
+    &lt;/div&gt;
+    &lt;div class="slide"&gt;
+        &lt;img src="images/spiderman (1).webp"&gt;
+    &lt;/div&gt;
+    &lt;div class="slide"&gt;
+        &lt;img src="images/spiderman (3).webp"&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                </pre>
+            </div>
+            <div>
+                <h2>CSS</h2>
+            </div>
+            <div class="buttonStyleSection">
+                <img src="../images/copy.webp" alt="" class="copyButtons" id="copyButton2">
+                <pre id="textToCopy2">
+.slide img {
+    width: 300px;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}                                   
+                </pre>
+            </div>
+        </div>
+        <div>
+            <h2>JAVASCRIPT</h2>
+        </div>
+        <div class="buttonStyleSection">
+            <img src="../images/copy.webp" alt="" class="copyButtons" id="copyButton3">
+            <pre id="textToCopy3">
+const carousel = document.getElementById('carousel');
+const slides = carousel.querySelectorAll('.slide');
+let slideCurrent = 0;
+let isDragging = false;
+let startX = 0;
+let currentX = 0;
+
+function showSlide(index) {
+    if (index < 0) {
+        index = slides.length - 1;
+    } else if (index >= slides.length) {
+        index = 0;
+    }
+
+    slides.forEach((slide, i) => {
+        if (i === index) {
+            slide.style.display = 'block';
+            slide.classList.add('fade');
+        } else {
+            slide.style.display = 'none';
+            slide.classList.remove('fade');
+        }
+    });
+
+    slideCurrent = index;
+}
+
+showSlide(slideCurrent);
+
+carousel.addEventListener('touchstart', (e) => {
+    startX = e.changedTouches[0].clientX;
+});
+
+carousel.addEventListener('touchend', (e) => {
+    const endX = e.changedTouches[0].clientX;
+    const deltaX = startX - endX;
+
+    if (deltaX > 30) {
+        showSlide(slideCurrent + 1);
+    } else if (deltaX < -30) {
+        showSlide(slideCurrent - 1);
+    }
+});
+
+carousel.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.clientX;
+    currentX = e.clientX;
+    e.preventDefault();
+});
+
+carousel.addEventListener('mouseup', () => {
+    isDragging = false;
+    const deltaX = currentX - startX;
+
+    if (deltaX > 30) {
+        showSlide(slideCurrent - 1);
+    } else if (deltaX < -30) {
+        showSlide(slideCurrent + 1);
+    }
+});
+
+carousel.addEventListener('mousemove', (e) => {
+    if (isDragging) {
+        currentX = e.clientX;
+    }
+});               
+                </pre>
+        </div>
+    </div>
+    </div>
+</body>
+<script>
+    function copyTextToClipboard(text) {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+    }
+
+    document.getElementById('copyButton1').addEventListener('click', function () {
+        const textToCopy = document.getElementById('textToCopy1').textContent;
+        copyTextToClipboard(textToCopy);
+    });
+
+    document.getElementById('copyButton2').addEventListener('click', function () {
+        const textToCopy = document.getElementById('textToCopy2').textContent;
+        copyTextToClipboard(textToCopy);
+    });
+
+    document.getElementById('copyButton3').addEventListener('click', function () {
+        const textToCopy = document.getElementById('textToCopy3').textContent;
+        copyTextToClipboard(textToCopy);
+    });
+
+    const carousel = document.getElementById('carousel');
+    const slides = carousel.querySelectorAll('.slide');
+    let slideCurrent = 0;
+    let isDragging = false;
+    let startX = 0;
+    let currentX = 0;
+
+    function showSlide(index) {
+        if (index < 0) {
+            index = slides.length - 1;
+        } else if (index >= slides.length) {
+            index = 0;
+        }
+
+        slides.forEach((slide, i) => {
+            if (i === index) {
+                slide.style.display = 'block';
+                slide.classList.add('fade');
+            } else {
+                slide.style.display = 'none';
+                slide.classList.remove('fade');
+            }
+        });
+
+        slideCurrent = index;
+    }
+
+    showSlide(slideCurrent);
+
+    carousel.addEventListener('touchstart', (e) => {
+        startX = e.changedTouches[0].clientX;
+    });
+
+    carousel.addEventListener('touchend', (e) => {
+        const endX = e.changedTouches[0].clientX;
+        const deltaX = startX - endX;
+
+        if (deltaX > 30) {
+            showSlide(slideCurrent + 1);
+        } else if (deltaX < -30) {
+            showSlide(slideCurrent - 1);
+        }
+    });
+
+    carousel.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.clientX;
+        currentX = e.clientX;
+        e.preventDefault();
+    });
+
+    carousel.addEventListener('mouseup', () => {
+        isDragging = false;
+        const deltaX = currentX - startX;
+
+        if (deltaX > 30) {
+            showSlide(slideCurrent - 1);
+        } else if (deltaX < -30) {
+            showSlide(slideCurrent + 1);
+        }
+    });
+
+    carousel.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+            currentX = e.clientX;
+        }
+    });
+</script>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="detailedButton.css">
+</head>
+
+<body>
+    <header class="header">
+        <div><img src="../images/logo.webp" alt=""></div>
+        <div class="typeselect">
+        </div>
+    </header>
+    <div class="bodySection">
+        <a href="../index.html">
+            <img src="../images/backbutton.webp" alt="" class="backButton">
+        </a>
+        <div class="originalButtonSection">
+            <div class="card3">
+                <div class="first-content">
+                    <span>HOVER</span>
+                </div>
+                <div class="second-content">
+                    <span>HELLO</span>
+                </div>
+            </div>  
+        </div>
+        <div class="buttonCodeContainer">
+            <div>
+                <h2>HTML</h2>
+            </div>
+            <div class="buttonCodeSection">
+                <img src="../images/copy.webp" alt="" class="copyButtons" id="copyButton1">
+                <pre id="textToCopy1">
+&lt;div class="card3"&gt;
+    &lt;div class="first-content"&gt;
+        &lt;span>HOVER&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="second-content"&gt;
+        &lt;span>HELLO&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </div>
+            <div>
+                <h2>CSS</h2>
+            </div>
+            <div class="buttonStyleSection">
+                <img src="../images/copy.webp" alt="" class="copyButtons" id="copyButton2">
+                <pre id="textToCopy2">
+.card3 {
+    width: 300px;
+    height: 300px;
+    background: rgb(255, 8, 214);
+    transition: all 0.4s;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0 0 0 /32%);
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.card3:hover {
+    border-radius: 15px;
+    cursor: pointer;
+    transform: scale(1.2);
+    box-shadow: 0px 0px 10px 0px rgba(0 0 0 /32%);
+    background: rgb(9, 87, 255);
+}
+
+.first-content {
+    height: 100%;
+    width: 100%;
+    transition: all 0.4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    border-radius: 15px;
+}
+
+.card3:hover .first-content {
+    height: 0px;
+    opacity: 0;
+}
+
+.second-content {
+    height: 0%;
+    width: 100%;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    transition: all 0.4s;
+    font-size: 0px;
+    transform: rotate(90deg) scale(-1);
+}
+
+.card3:hover .second-content {
+    opacity: 1;
+    height: 100%;
+    font-size: 1.8rem;
+    transform: rotate(0deg);
+}               
+                </pre>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function copyTextToClipboard(text) {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+    }
+
+    document.getElementById('copyButton1').addEventListener('click', function () {
+        const textToCopy = document.getElementById('textToCopy1').textContent;
+        copyTextToClipboard(textToCopy);
+    });
+
+    document.getElementById('copyButton2').addEventListener('click', function () {
+        const textToCopy = document.getElementById('textToCopy2').textContent;
+        copyTextToClipboard(textToCopy);
+    });
+</script>
+
+</html>

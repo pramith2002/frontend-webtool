@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="detailedButton.css">
+</head>
+
+<body>
+    <header class="header">
+        <div><img src="../images/logo.webp" alt=""></div>
+        <div class="typeselect">
+        </div>
+    </header>
+    <div class="bodySection">
+        <a href="../index.html">
+            <img src="../images/backbutton.webp" alt="" class="backButton">
+        </a>
+        <div class="originalButtonSection">
+            <div class="cardContainer">
+                <div class="card4">
+                    <p class="city">MYSORE</p>
+                    <p class="weather">PARTILY CLOUDY</p>
+                    <img src="../images/clouds.webp" alt="" style="width: 50px;">
+                    <p class="temp">32°</p>
+                    <div class="minmaxContainer">
+                        <div class="min">
+                            <p class="minHeading">Min</p>
+                            <p class="minTemp">30°</p>
+                        </div>
+                        <div class="max">
+                            <p class="maxHeading">Max</p>
+                            <p class="maxTemp">32°</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="buttonCodeContainer">
+            <div>
+                <h2>HTML</h2>
+            </div>
+            <div class="buttonCodeSection">
+                <img src="../images/copy.webp" alt="" class="copyButtons" id="copyButton1">
+                <pre id="textToCopy1">
+&lt;div class="cardContainer"&gt;
+    &lt;div class="card4"&gt;
+        &lt;p class="city"&gt;MYSORE&lt;/p&gt;
+        &lt;p class="weather"&gt;PARTILY CLOUDY&lt;/p&gt;
+        &lt;img src="images/clouds.webp" alt="" style="width: 50px;"&gt;
+        &lt;p class="temp"&gt;32°&lt;/p&gt;
+        &lt;div class="minmaxContainer"&gt;
+            &lt;div class="min"&gt;
+                &lt;p class="minHeading"&gt;Min&lt;/p&gt;
+                &lt;p class="minTemp"&gt;30°&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="max"&gt;
+                &lt;p class="maxHeading"&gt;Max&lt;/p&gt;
+                &lt;p class="maxTemp"&gt;32°&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div>&gt;
+&lt;/div&gt;
+            </div>
+            <div>
+                <h2>CSS</h2>
+            </div>
+            <div class="buttonStyleSection">
+                <img src="../images/copy.webp" alt="" class="copyButtons" id="copyButton2">
+                <pre id="textToCopy2">
+.cardContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.card4 {
+    position: relative;
+    width: 280px;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(30px);
+    background-color: rgba(65, 65, 65, 0.386);
+    border: 1px solid rgba(255, 255, 255, 0.089);
+    cursor: pointer;
+}
+  
+.city {
+    font-weight: 700;
+    font-size: 0.9em;
+    letter-spacing: 1.2px;
+    color: white;
+}
+  
+.weather {
+    font-weight: 500;
+    font-size: 0.7em;
+    letter-spacing: 1.2px;
+    color: rgb(255, 255, 255);
+}
+  
+.temp {
+    font-size: 1.8em;
+    color: white;
+    margin: 0;
+}
+  
+.minmaxContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+.min,.max {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0px 20px;
+    gap: 4px;
+}
+  
+.max {
+    align-items: flex-start;
+    border-left: 2px solid white;
+}
+  
+.maxHeading,.minHeading {
+    font-size: 0.7em;
+    font-weight: 600;
+    color: white;
+}
+  
+.maxTemp,.minTemp {
+    font-size: 0.6em;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+}
+  
+.cardContainer::before {
+    width: 100px;
+    height: 100px;
+    content: "";
+    position: absolute;
+    background-color: rgba(144, 161, 255, 0.945);
+    z-index: -1;
+    border-radius: 50%;
+    left: 100px;
+    top: 50px;
+    transition: all 1s;
+}
+  
+.cardContainer:hover::before {
+    transform: translate(-50px ,50px);
+}                    
+                </pre>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function copyTextToClipboard(text) {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+    }
+
+    document.getElementById('copyButton1').addEventListener('click', function () {
+        const textToCopy = document.getElementById('textToCopy1').textContent;
+        copyTextToClipboard(textToCopy);
+    });
+
+    document.getElementById('copyButton2').addEventListener('click', function () {
+        const textToCopy = document.getElementById('textToCopy2').textContent;
+        copyTextToClipboard(textToCopy);
+    });
+</script>
+
+</html>

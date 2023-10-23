@@ -1,0 +1,544 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --blue: #6CCFF6;
+    --grey: #757780;
+}
+
+.header {
+    padding: 20px;
+    background-color: var(--blue);
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Footer{
+    background-color: var(--blue);
+    display: flex;
+    flex-direction: column;
+}
+
+.header img {
+    height: 50px;
+    width: auto;
+}
+
+.footer{
+    margin: auto;
+}
+
+.contactSection{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000;
+}
+
+.contactSection a{
+    text-decoration: none;
+    color: #000;
+}
+
+.privacypolicy{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.privacyPolicySection{
+    margin: 50px 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.privacyLists{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.PrivacyTitle h1{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.footer h2{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+
+.footer h2{
+    margin: 10px 0 0 0;
+}
+
+.contactSection p{
+    margin: 10px 0;
+}
+
+
+.typeselect {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.typeselect a {
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.typeselect a:hover {
+    background-color: #fff;
+    transition: .5s;
+    color: var(--blue);
+}
+
+.generateContainer {
+    margin: 0px 20px;
+}
+
+.buttonSection {
+    position: relative;
+}
+
+.buttonSection img {
+    width: 40px;
+    position: absolute;
+    left: 10px;
+}
+
+.buttonSection h2 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.buttonStyleSection {
+    height: 500px;
+    width: 500px;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    box-shadow: 0 0 15px 0px #cacaca;
+}
+
+.buttonStyleSection div {
+    display: flex;
+    align-items: center;
+}
+
+.buttonPreviewSection {
+    height: 300px;
+    width: 300px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--grey);
+}
+
+.customButton {
+    background-color: #0000ff;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+}
+
+
+.blockButtonFontStyle {
+    background-color: var(--blue);
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 15px 4px 0;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0px 1px 10px #9c9c9c;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.blockButtonElavated {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+.italicButtonFontStyle {
+    background-color: var(--blue);
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 15px 4px 0;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0px 1px 10px #9c9c9c;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.italicButtonElavated {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+.underlinedButtonFontStyle {
+    background-color: var(--blue);
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 15px 4px 0;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0px 1px 10px #9c9c9c;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.underlinedButtonElavated {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+.ButtonBorderContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start !important;
+}
+
+.ButtonHoverBorderContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start !important;
+}
+
+
+.ButtonShadowContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start !important;
+}
+
+.ButtonHoverShadowContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start !important;
+}
+
+.buttonStyleSection label {
+    width: 150px;
+}
+
+.buttonStyleSection input {
+    border-radius: 5px;
+    border: none;
+}
+
+.buttonStyleSection::-webkit-scrollbar {
+    width: 5px;
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+.buttonStyleSection::-webkit-scrollbar-thumb {
+    background-color: var(--blue);
+    border-radius: 5px;
+}
+
+.buttonStyleSection input[type="range"] {
+    height: 5px;
+    color: var(--blue);
+}
+
+.buttonStyleSection input[type="text"] {
+    padding: 5px;
+    box-shadow: 0px 2px 3px 0px #9c9c9c;
+
+}
+
+.previewAndGenerateSection {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.generateCodeBtn {
+    width: fit-content;
+    height: fit-content;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: var(--blue);
+    color: #fff;
+    box-shadow: 3px 4px 12px 0px #818181c7;
+    border: none;
+    margin: auto;
+}
+
+.generateCodeBtn:hover {
+    background-color: #fff;
+    color: var(--blue);
+    box-shadow: 3px 4px 12px 0px #06dcf0c7;
+}
+
+.customBtnCode {
+    position: absolute;
+    background-color: #fff;
+    color: #fff;
+    top: 150px;
+    border-radius: 10px;
+    width: 800px;
+    height: 500px;
+    box-shadow: 0 0 15px 0px #cacaca;
+    display: none;
+    flex-direction: column;
+}
+
+.htmlCode {
+    position: relative;
+    background-color: var(--grey);
+    height: 100px;
+    overflow-y: auto;
+    padding: 10px;
+    margin: 5%;
+    border-radius: 10px;
+}
+
+.htmlCode h3 {
+    margin: 0;
+    text-align: center;
+}
+
+.cssSection {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    justify-content: space-between;
+    margin: 0 5% 5% 5%;
+    gap: 20px;
+}
+
+.customcode {
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--grey);
+}
+
+.customcode h3 {
+    margin: 0;
+    text-align: center;
+}
+
+.copyBtn {
+    position: absolute;
+    width: 30px;
+    right: 10px;
+    top: 10px;
+    transition: .5s;
+}
+
+.copyBtn:hover {
+    transform: scale(1.2);
+    transition: .5s;
+}
+
+.closeBtn {
+    position: absolute;
+    width: 30px;
+    border-radius: 5px;
+    right: 5px;
+    top: 5px;
+    transition: .5s;
+}
+
+.closeBtn:hover {
+    transform: scale(1.2);
+    transition: .5s;
+}
+
+@media(min-width:650px) and (max-width:900px) {
+
+    .buttonContainer {
+        gap: 30px;
+        flex-direction: column-reverse;
+    }
+
+    .buttonStyleSection {
+        height: 500px;
+        width: 500px;
+        padding: 20px;
+    }
+
+
+    .buttonPreviewSection {
+        height: 300px;
+        width: 300px;
+    }
+
+    .customBtnCode{
+        width: 600px;
+    }
+
+    .privacyPolicySection{
+        margin: 50px 8%;
+    }
+}
+
+@media(min-width:360px) and (max-width:650px) {
+
+    .buttonSection h2 {
+        font-size: 18px;
+    }
+
+    .buttonSection img {
+        width: 25px;
+        left: 0px;
+        top: 0px;
+    }
+
+    .buttonContainer {
+        gap: 30px;
+        flex-direction: column-reverse;
+    }
+
+    .buttonStyleSection {
+        height: 350px;
+        width: 300px;
+        padding: 10px;
+    }
+
+    .buttonPreviewSection {
+        height: 250px;
+        width: 250px;
+    }
+
+    .customBtnCode{
+        width: 300px;
+        height: 450px;
+    }
+
+    .htmlCode{
+        margin-top: 50px;
+    }
+
+    .footer h2{
+        font-size: 16px;
+    }
+
+
+    .contactSection{
+        padding: 0 10px;
+    }
+
+    .privacypolicy{
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .privacyPolicySection{
+        margin: 30px 2%;
+    }
+
+}
+
+@media(max-width:360px) {
+
+    .buttonSection h2 {
+        font-size: 16px;
+    }
+
+    .buttonSection img {
+        width: 20px;
+        left: 0px;
+        top: 0px;
+    }
+
+    .buttonContainer {
+        gap: 30px;
+        margin-top: 30px;
+        flex-direction: column-reverse;
+    }
+
+    .buttonStyleSection {
+        height: 350px;
+        width: 240px;
+        padding: 10px;
+    }
+
+    .buttonPreviewSection {
+        height: 250px;
+        width: 250px;
+    }
+
+    .buttonStyleSection label {
+        width: 100px;
+    }
+
+    
+    .customBtnCode{
+        width: 260px;
+        height: 400px;
+    }
+
+    .htmlCode{
+        margin-top: 50px;
+    }
+
+    .footer h2{
+        font-size: 16px;
+    }
+
+    .contactSection{
+        padding: 0 5px;
+        flex-direction: column-reverse;
+        align-items: normal;
+    }
+    
+    .privacypolicy{
+        display: flex;
+        gap: 10px;
+    }
+
+    .privacyPolicySection{
+        margin: 30px 2%;
+    }
+}

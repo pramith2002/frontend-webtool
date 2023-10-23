@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="detailedButton.css">
+</head>
+
+<body>
+    <header class="header">
+        <div><img src="../images/logo.webp" alt=""></div>
+        <div class="typeselect">
+        </div>
+    </header>
+    <div class="bodySection">
+        <a href="../index.html">
+            <img src="../images/backbutton.webp" alt="" class="backButton">
+        </a>
+        <div class="originalButtonSection">
+                <button class="bn8"><span>Button</span></button>
+        </div>
+        <div class="buttonCodeContainer">
+            <div>
+                <h2>HTML</h2>
+            </div>
+            <div class="buttonCodeSection">
+                <img src="../images/copy.webp" alt="" class="copyButtons" id="copyButton1">
+                <pre id="textToCopy1">
+&lt;button class="bn8"&gt;&lt;span&gt;Button&lt;/span&gt;&lt;/button&gt;</pre>                
+            </div>
+            <div>
+                <h2>CSS</h2>
+            </div>
+            <div class="buttonStyleSection">
+                <img src="../images/copy.webp" alt="" class="copyButtons" id="copyButton2">
+                <pre id="textToCopy2">
+.bn8 {
+    padding: 5px;
+    height: fit-content;
+    width: fit-content;
+    outline: 0;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(#fdde5c),
+      color-stop(#f8ab5e),
+      color-stop(#f56a62),
+      color-stop(#a176c8),
+      color-stop(#759beb),
+      color-stop(#65beb3),
+      to(#70db96)
+    );
+    background: linear-gradient(
+      to right,
+      #fdde5c,
+      #f8ab5e,
+      #f56a62,
+      #a176c8,
+      #759beb,
+      #65beb3,
+      #70db96
+    );
+    border-radius: 30px;
+    border: 0;
+    box-shadow: none;
+    cursor: pointer;
+}
+.bn8 > span {
+  display: block;
+  padding: 10px 40px;
+  font-size: 17px;
+  font-weight: 500;
+  background: #ebebeb;
+  border-radius: 30px;
+}
+                </pre>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function copyTextToClipboard(text) {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+    }
+
+    document.getElementById('copyButton1').addEventListener('click', function () {
+        const textToCopy = document.getElementById('textToCopy1').textContent;
+        copyTextToClipboard(textToCopy);
+    });
+
+    document.getElementById('copyButton2').addEventListener('click', function () {
+        const textToCopy = document.getElementById('textToCopy2').textContent;
+        copyTextToClipboard(textToCopy);
+    });
+
+
+</script>
+
+</html>

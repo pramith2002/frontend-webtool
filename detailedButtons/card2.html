@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="detailedButton.css">
+</head>
+
+<body>
+    <header class="header">
+        <div><img src="../images/logo.webp" alt=""></div>
+        <div class="typeselect">
+        </div>
+    </header>
+    <div class="bodySection">
+        <a href="../index.html">
+            <img src="../images/backbutton.webp" alt="" class="backButton">
+        </a>
+        <div class="originalButtonSection">
+            <div class="card2">HOVER</div>
+        </div>
+        <div class="buttonCodeContainer">
+            <div>
+                <h2>HTML</h2>
+            </div>
+            <div class="buttonCodeSection">
+                <img src="../images/copy.webp" alt="" class="copyButtons" id="copyButton1">
+                <pre id="textToCopy1">
+&lt;div class="card2"&gt;HOVER&lt;/div&gt;
+            </div>
+            <div>
+                <h2>CSS</h2>
+            </div>
+            <div class="buttonStyleSection">
+                <img src="../images/copy.webp" alt="" class="copyButtons" id="copyButton2">
+                <pre id="textToCopy2">
+.card2 {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: rgb(138, 138, 248);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+}
+  
+.card2::before,
+.card2::after {
+    position: absolute;
+    content: "";
+    width: 20%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: rgb(255, 127, 127);
+    transition: all 0.5s;
+}
+  
+.card2::before {
+    top: 0;
+    left: 0;
+    border-radius: 15px 0 100% 0;
+}
+  
+.card2::after {
+    bottom: 0;
+    right: 0;
+    border-radius: 100% 0 15px 0;
+}
+  
+.card2:hover::before,
+.card2:hover:after {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    transition: all 0.5s;
+}
+  
+.card2:hover:after {
+    content: "HI";
+}                    
+                </pre>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function copyTextToClipboard(text) {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+    }
+
+    document.getElementById('copyButton1').addEventListener('click', function () {
+        const textToCopy = document.getElementById('textToCopy1').textContent;
+        copyTextToClipboard(textToCopy);
+    });
+
+    document.getElementById('copyButton2').addEventListener('click', function () {
+        const textToCopy = document.getElementById('textToCopy2').textContent;
+        copyTextToClipboard(textToCopy);
+    });
+</script>
+
+</html>

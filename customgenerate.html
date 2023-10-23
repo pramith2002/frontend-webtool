@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/customgenerate.css">
+</head>
+
+<body>
+    <header class="header">
+        <div><img src="images/logo.webp" alt=""></div>
+        <div class="typeselect">
+            <a href="index.html">Home</a>
+        </div>
+    </header>
+    <div class="generateContainer">
+        <div class="buttonSection">
+            <a href="index.html"><img src="images/backbutton.webp" alt=""></a>
+            <h2>CUSTOM BUTTON</h2>
+        </div>
+        <div class="buttonContainer">
+            <div class="buttonStyleSection">
+                <div>
+                    <label for="bgColor">Background Color</label>
+                    <input type="color" id="buttonBg" value="#0000ff" oninput="updateButtonBg()">
+                </div>
+                <div>
+                    <label for="text">Text</label>
+                    <input type="text" id="buttonText" placeholder="button text" onkeyup="updateButtonText()">
+                </div>
+                <div>
+                    <label for="textcolor">Font Color</label>
+                    <input type="color" id="buttonFontColor" value="#ffffff" oninput="updateButtonFontColor()">
+                </div>
+                <div>
+                    <label for="font">Font family</label>
+                    <select name="" id="Buttonfontfamily" onchange="updateButtonFont()">
+                        <option value="" selected disabled>Select</option>
+                        <option value="TimesNewRoman">Times new roman</option>
+                        <option value="Arial">Arial</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="CourierNew">Courier New</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="fontSize">Font size</label>
+                    <input type="range" id="ButtonfontSize" oninput="updateButtonFontsize()" min="0" max="70"
+                        value="14">
+                </div>
+                <div>
+                    <label for="fontWeight">Font weight</label>
+                    <select name="" id="ButtonfontWeight" onchange="updateButtonFontWeight()">
+                        <option value="" selected disabled>Select</option>
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                        <option value="300">300</option>
+                        <option value="400">400</option>
+                        <option value="500">500</option>
+                        <option value="600">600</option>
+                        <option value="700">700</option>
+                        <option value="800">800</option>
+                        <option value="900">900</option>
+                        <option value="bold">Bold</option>
+                        <option value="bolder">Bolder</option>
+                        <option value="lighter">Lighter</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Font Style</label>
+                    <div>
+                        <span class="blockButtonFontStyle" onclick="updateButtonFontWeight2(this)"><b>B</b></span>
+                        <span class="italicButtonFontStyle" onclick="updateButtonFontStyle(this)"><i>i</i></span>
+                        <span class="underlinedButtonFontStyle"
+                            onclick="updateButtonFontDecoration(this)"><u>ul</u></span>
+                    </div>
+                </div>
+                <div>
+                    <label for="buttonBorder">Border</label>
+                    <input type="checkbox" id="ButtonBorder" onchange="updateButtonBorder()">
+                </div>
+                <div id="ButtonBorderContainer" class="ButtonBorderContainer" style="display: none;">
+                    <div>
+                        <label for="Buttonbordercolor">Border Color</label>
+                        <input type="color" value="#000000" id="buttonBorderColor" oninput="updateButtonBorderColor()">
+                    </div>
+                    <div>
+                        <label for="buttonborderStyle">Border Style</label>
+                        <select name="" id="ButtonBorderStyle" onchange="updateButtonBorderStyle()">
+                            <option value="Solid" selected>Solid</option>
+                            <option value="Dashed">Dashed</option>
+                            <option value="Double">Double</option>
+                            <option value="Dotted">Dotted</option>
+                            <option value="Inset">Inset</option>
+                            <option value="Outset">Outset</option>
+                            <option value="Ridge">Ridge</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="buttonBorderThicked">Border Thickness</label>
+                        <input type="range" min=".5" max="20" value="1" id="ButtonBorderThickness"
+                            oninput="updateButtonBorderThickness()">
+                    </div>
+                </div>
+                <div>
+                    <label for="buttonBorderRadius">Border Radius</label>
+                    <input type="range" min="1" max="50" value="0" name="" id="buttonBorderRadius" oninput="buttonBorderRadius()">
+                </div>
+                <div>
+                    <label for="buttonpadding">Padding Top</label>
+                    <input type="range" min="1" max="100" id="ButtonPaddingTop" value="10"
+                        oninput="updateButtonPaddingTop()">
+                </div>
+                <div>
+                    <label for="buttonpadding">Padding Right</label>
+                    <input type="range" min="1" max="100" id="ButtonPaddingRight" value="10"
+                        oninput="updateButtonPaddingRight()">
+                </div>
+                <div>
+                    <label for="buttonpadding">Padding Bottom</label>
+                    <input type="range" min="1" max="100" id="ButtonPaddingBottom" value="10"
+                        oninput="updateButtonPaddingBottom()">
+                </div>
+                <div>
+                    <label for="buttonpadding">Padding Left</label>
+                    <input type="range" min="1" max="100" id="ButtonPaddingLeft" value="10"
+                        oninput="updateButtonPaddingLeft()">
+                </div>
+                <div>
+                    <label for="buttonShadow">Shadow</label>
+                    <input type="checkbox" id="ButtonShadow" onchange="updateButtonShadow()">
+                </div>
+                <div id="ButtonShadowContainer" class="ButtonShadowContainer" style="display: none;">
+                    <div>
+                        <label for="buttonShadowType">Shadow Type</label>
+                        <select name="" id="ButtonShadowType" onchange="updateButtonShadowType()">
+                            <option value="Outset" selected>Outset</option>
+                            <option value="Inset">Inset</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="ButtonShadowX">X offset</label>
+                        <input type="range" min="0" max="20" value="0" id="buttonShadowXoffset"
+                            oninput="updateButtonShadowXoffset()">
+                    </div>
+                    <div>
+                        <label for="ButtonShadowY">Y offset</label>
+                        <input type="range" min="0" max="20" value="0" id="buttonShadowYoffset"
+                            oninput="updateButtonShadowYoffset()">
+                    </div>
+                    <div>
+                        <label for="ButtonShadowBlur">Blur</label>
+                        <input type="range" min="0" max="20" value="10" id="buttonShadowBlur"
+                            oninput="updateButtonShadowBlur()">
+                    </div>
+                    <div>
+                        <label for="ButtonShadowSpread">Spread</label>
+                        <input type="range" min="0" max="20" value="0" id="buttonShadowSpread"
+                            oninput="updateButtonShadowSpread()">
+                    </div>
+                    <div>
+                        <label for="ButtonShadowColor">Shadow Color</label>
+                        <input type="color" value="#000000" id="buttonShadowColor" oninput="updateButtonShadowColor()">
+                    </div>
+                    <div>
+                        <label for="ButtonShadowColor">Color Opacity</label>
+                        <input type="range" min="0.0" max="1.0" value="1.0" step="0.1" id="buttonShadowColorOpacity"
+                            oninput="updateButtonShadowColorOpacity()">
+                    </div>
+                </div>
+                <h2>HOVER</h2>
+                <div>
+                    <label for="">Scale</label>
+                    <input type="range" min="1" max="3" step="0.1" value="1" id="ButtonScale"
+                        oninput="updateButtonScale()">
+                </div>
+                <div>
+                    <label for="">Hover transition</label>
+                    <input type="range" min="0" max="3" step="0.1" value="0" id="ButtonTransition"
+                        oninput="updateButtonHoverTransition()">
+                </div>
+                <div>
+                    <label for="">Background Color</label>
+                    <input type="color" value="#0000ff" id="ButtonHoverbg" oninput="updateButtonHoverBg()">
+                </div>
+                <div>
+                    <label for="">Font Color</label>
+                    <input type="color" value="#ffffff" id="ButtonHoverFontColor"
+                        oninput="updateButtonHoverFontColor()">
+                </div>
+                <div>
+                    <label for="buttonHoverBorder">Border</label>
+                    <input type="checkbox" id="ButtonHoverBorder" onchange="updateButtonHoverBorder()">
+                </div>
+                <div id="ButtonBorderHoverContainer" class="ButtonHoverBorderContainer" style="display: none;">
+                    <div>
+                        <label for="ButtonHoverbordercolor">Border Color</label>
+                        <input type="color" value="#000000" id="buttonHoverBorderColor"
+                            oninput="updateButtonHoverBorderColor()">
+                    </div>
+                    <div>
+                        <label for="buttonHoverborderStyle">Border Style</label>
+                        <select name="" id="ButtonHoverBorderStyle" onchange="updateButtonHoverBorderStyle()">
+                            <option value="Solid" selected>Solid</option>
+                            <option value="Dashed">Dashed</option>
+                            <option value="Double">Double</option>
+                            <option value="Dotted">Dotted</option>
+                            <option value="Inset">Inset</option>
+                            <option value="Outset">Outset</option>
+                            <option value="Ridge">Ridge</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="buttonHoverBorderThicked">Border Thickness</label>
+                        <input type="range" min=".5" max="20" value="1" id="ButtonHoverBorderThickness"
+                            oninput="updateButtonHoverBorderThickness()">
+                    </div>
+                </div>
+                <div>
+                    <label for="buttonHoverShadow">Shadow</label>
+                    <input type="checkbox" id="ButtonHoverShadow" onchange="updateButtonHoverShadow()">
+                </div>
+                <div id="ButtonHoverShadowContainer" class="ButtonHoverShadowContainer" style="display: none;">
+                    <div>
+                        <label for="buttonHoverShadowType">Shadow Type</label>
+                        <select name="" id="ButtonHoverShadowType" onchange="updateButtonHoverShadowType()">
+                            <option value="Outset" selected>Outset</option>
+                            <option value="Inset">Inset</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="ButtonHoverShadowX">X offset</label>
+                        <input type="range" min="0" max="20" value="0" id="buttonHoverShadowXoffset"
+                            oninput="updateButtonHoverShadowXoffset()">
+                    </div>
+                    <div>
+                        <label for="ButtonHoverShadowY">Y offset</label>
+                        <input type="range" min="0" max="20" value="0" id="buttonHoverShadowYoffset"
+                            oninput="updateButtonHoverShadowYoffset()">
+                    </div>
+                    <div>
+                        <label for="ButtonHoverShadowBlur">Blur</label>
+                        <input type="range" min="0" max="20" value="10" id="buttonHoverShadowBlur"
+                            oninput="updateButtonHoverShadowBlur()">
+                    </div>
+                    <div>
+                        <label for="ButtonHoverShadowSpread">Spread</label>
+                        <input type="range" min="0" max="20" value="0" id="buttonHoverShadowSpread"
+                            oninput="updateButtonHoverShadowSpread()">
+                    </div>
+                    <div>
+                        <label for="ButtonHoverShadowColor">Shadow Color</label>
+                        <input type="color" value="#000000" id="buttonHoverShadowColor"
+                            oninput="updateButtonHoverShadowColor()">
+                    </div>
+                    <div>
+                        <label for="ButtonHoverShadowColor">Color Opacity</label>
+                        <input type="range" min="0.0" max="1.0" value="1.0" step="0.1"
+                            id="buttonHoverShadowColorOpacity" oninput="updateButtonHoverShadowColorOpacity()">
+                    </div>
+                </div>
+            </div>
+
+                <div class="previewAndGenerateSection">
+                    <div class="buttonPreviewSection">
+                    <button id="customButton" class="customButton">Button</button>
+                </div>
+                <button id="generateCode" class="generateCodeBtn" onclick="generateCode(); generateCode2()">GENERATE</button>
+            </div>
+
+            <div id="customBtnCode" class="customBtnCode">
+                <img src="images/close.webp" class="closeBtn" onclick="closeCodeSection()" alt="">
+                <div class="htmlCode">
+                    <h3>HTML</h3>
+                    <img src="images/copy.webp" class="copyBtn" alt="" id="copyHtml">
+                    <pre id="textToCopy1">
+&lt;button id="customButton" class="customButton"&gt;Button&lt;/button&gt;
+                    </pre>
+                </div>
+                <div class="cssSection">
+                    <div class="cssNormalCode customcode">
+                        <h3>NORMAL CSS</h3>
+                        <img src="images/copy.webp" class="copyBtn" alt="" id="copyNormalCss">
+                        <pre id="textToCopy2"></pre>
+                    </div>                    
+                    <div class="cssHoverCode customcode">
+                        <h3>HOVER CSS</h3>
+                        <img src="images/copy.webp" class="copyBtn" alt="" id="copyHoverCss">
+                        <pre id="textToCopy3"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="Footer">
+        <div class="footer">
+            <h2>FRONTEND WEB TOOLS</h2>
+        </div>
+        <div class="contactSection">
+            <div>
+                <h2>CONTACT</h2>
+                <p>pramith303@gmail.com</p>
+                <p><a href="https://instagram.com/_pramith___?utm_source=qr&igshid=MThlNWY1MzQwNA==">Instagram</a></p>
+            </div>
+
+            <div class="privacypolicy">
+                <p><a href="privacyPolicy.html">Privacy Policy</a></p>
+                <p><a href="privacyPolicy.html #terms ">Terms And Conditions</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="customgenerate.js"></script>
+
+</html>

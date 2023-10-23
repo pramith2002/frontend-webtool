@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="detailedButton.css">
+</head>
+
+<body>
+    <header class="header">
+        <div><img src="../images/logo.webp" alt=""></div>
+        <div class="typeselect">
+        </div>
+    </header>
+    <div class="bodySection">
+        <a href="../index.html">
+            <img src="../images/backbutton.webp" alt="" class="backButton">
+        </a>
+        <div class="originalButtonSection">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../images/iphone.webp" alt="">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="../images/iphone.webp" alt="">
+                        <h3>Iphone 14</h3>
+                        <h1>Rs.78,000</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="buttonCodeContainer">
+            <div>
+                <h2>HTML</h2>
+            </div>
+            <div class="buttonCodeSection">
+                <img src="../images/copy.webp" alt="" class="copyButtons" id="copyButton1">
+                <pre id="textToCopy1">
+&lt;div class="flip-card"&gt;
+    &lt;div class="flip-card-inner"&gt;
+        &lt;div class="flip-card-front"&gt;
+            &lt;img src="images/iphone.webp" alt=""&gt;
+        &lt;/div&gt;
+        &lt;div class="flip-card-back"&gt;
+            &lt;img src="images/iphone.webp" alt=""&gt;
+            &lt;h3&gt;Iphone 14&lt;/h3&gt;
+            &lt;h1&gt;Rs.78,000&lt;/h1&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </div>
+            <div>
+                <h2>CSS</h2>
+            </div>
+            <div class="buttonStyleSection">
+                <img src="../images/copy.webp" alt="" class="copyButtons" id="copyButton2">
+                <pre id="textToCopy2">
+.flip-card{
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.flip-card-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner{
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 16px;
+}
+
+.flip-card-front{
+    background-image: linear-gradient(
+        108deg, #8f1fff, #ff00a7
+    );
+}
+
+.flip-card-front img{
+    width: 220px;
+    margin-top: 1rem;
+}
+
+.flip-card-back{
+    background-image: linear-gradient(
+        315deg, #8f1fff, #ff00a7
+    );
+    color: #ffffff;
+    transform: rotateY(180deg);
+}
+
+.flip-card-back  img{
+    width: 140px;
+    margin-top: 1rem;
+}
+
+.flip-card-back h3{
+    margin-bottom: 0.3rem;
+}
+
+.flip-card-back h1{
+    margin: 0;
+}                    
+                </pre>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function copyTextToClipboard(text) {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+    }
+
+    document.getElementById('copyButton1').addEventListener('click', function () {
+        const textToCopy = document.getElementById('textToCopy1').textContent;
+        copyTextToClipboard(textToCopy);
+    });
+
+    document.getElementById('copyButton2').addEventListener('click', function () {
+        const textToCopy = document.getElementById('textToCopy2').textContent;
+        copyTextToClipboard(textToCopy);
+    });
+</script>
+
+</html>
